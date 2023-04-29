@@ -3,7 +3,7 @@ import Node from '../../../Node';
 
 /*
  * First abi/vm by default
- * @see {@link https://github.com/aeternity/protocol/blob/71cf111/contracts/contract_vms.md#virtual-machines-on-the-æternity-blockchain}
+ * @see {@link https://github.com/aeternity/protocol/blob/6368d28/contracts/contract_vms.md#virtual-machines-on-the-æternity-blockchain}
  */
 export const ProtocolToVmAbi = {
   [ConsensusProtocolVersion.Iris]: {
@@ -19,10 +19,10 @@ export const ProtocolToVmAbi = {
   },
   [ConsensusProtocolVersion.Ceres]: {
     'contract-create': {
-      vmVersion: [VmVersion.Fate2], abiVersion: [AbiVersion.Fate],
+      vmVersion: [VmVersion.Fate3], abiVersion: [AbiVersion.Fate],
     },
     'contract-call': {
-      vmVersion: [], abiVersion: [AbiVersion.Fate],
+      vmVersion: [], abiVersion: [AbiVersion.Fate, AbiVersion.Sophia],
     },
     'oracle-call': {
       vmVersion: [], abiVersion: [AbiVersion.NoAbi, AbiVersion.Fate],

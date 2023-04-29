@@ -75,6 +75,7 @@ export enum VmVersion {
   Fate = 5,
   SophiaImprovementsLima = 6,
   Fate2 = 7,
+  Fate3 = 8,
 }
 
 /**

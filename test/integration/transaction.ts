@@ -107,7 +107,7 @@ describe('Transaction', () => {
     }),
   ], [
     'contract create',
-    'tx_+LAqAaEBhAyXS5cWR3ZFS6EZ2E7cTWBYqN7JK27cV4qy0wtMQgABuGr4aEYDoKEijZbj/w2AeiWwAbldusME5pm3ZgPuomnZ3TbUbYgrwLg7nv5E1kQfADcANwAaDoI/AQM//oB4IJIANwEHBwEBAJgvAhFE1kQfEWluaXQRgHggkhlnZXRBcmeCLwCFNy4xLjAAgwcAA4ZHcyzkwAAAAACDTEtAhDuaygCHKxFE1kQfP0tdwp4=',
+    'tx_+LAqAaEBhAyXS5cWR3ZFS6EZ2E7cTWBYqN7JK27cV4qy0wtMQgABuGr4aEYDoKEijZbj/w2AeiWwAbldusME5pm3ZgPuomnZ3TbUbYgrwLg7nv5E1kQfADcANwAaDoI/AQM//oB4IJIANwEHBwEBAJgvAhFE1kQfEWluaXQRgHggkhlnZXRBcmeCLwCFNy4xLjAAgwgAA4ZHcyzkwAAAAACDTEtAhDuaygCHKxFE1kQfP5pJQOw=',
     async () => aeSdk.buildTx({
       tag: Tag.ContractCreateTx,
       nonce,
