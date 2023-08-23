@@ -13,7 +13,7 @@ import { ConsensusProtocolVersion } from './tx/builder/constants';
 const bigIntPropertyNames = [
   'balance', 'queryFee', 'fee', 'amount', 'nameFee', 'channelAmount',
   'initiatorAmount', 'responderAmount', 'channelReserve', 'initiatorAmountFinal',
-  'responderAmountFinal', 'gasPrice', 'deposit',
+  'responderAmountFinal', 'gasPrice', 'minGasPrice', 'deposit',
 ] as const;
 
 const numberPropertyNames = [
@@ -21,7 +21,7 @@ const numberPropertyNames = [
   'nonce', 'nextNonce', 'height', 'blockHeight', 'topBlockHeight',
   'ttl', 'nameTtl', 'clientTtl',
   'inbound', 'outbound', 'peerCount', 'pendingTransactionsCount', 'effectiveAtHeight',
-  'version', 'solutions', 'round',
+  'version', 'solutions', 'round', 'blocks',
 ] as const;
 
 class NodeTransformed extends NodeApi {

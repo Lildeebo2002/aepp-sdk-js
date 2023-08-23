@@ -1,7 +1,7 @@
 version: '3'
 services:
   node:
-    image: aeternity/aeternity:v6.11.0
+    build: https://github.com/davidyuk/aeternity.git#44dfa9a39655250ae51749dac291259a7e3ece44
     hostname: node
     ports: ["3013:3013", "3113:3113", "3014:3014", "3114:3114"]
     volumes:
