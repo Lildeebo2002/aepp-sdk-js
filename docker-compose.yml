@@ -9,6 +9,6 @@ services:
       - ./docker/accounts_test.json:/home/aeternity/node/data/aecore/.genesis/accounts_test.json
 
   compiler:
-    image: aeternity/aesophia_http:v7.6.0
+    build: https://github.com/aeternity/aesophia_http.git#dcbb3876a1a93e57016e558dfd175300e3f28030
     hostname: compiler
     ports: ["3080:3080"]

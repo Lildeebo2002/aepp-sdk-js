@@ -65,15 +65,18 @@ function testCompiler(compiler: CompilerBase): void {
   });
 
   it('compiles and generates aci by path', async () => {
-    const { bytecode, aci } = await compiler.compile(inclSourceCodePath);
+    const { bytecode, aci, warnings } = await compiler.compile(inclSourceCodePath);
     expect(bytecode).to.equal(inclBytecode);
     expect(aci).to.eql(inclAci);
+    expect(warnings).to.eql([]);
   });
 
   it('compiles and generates aci by source code', async () => {
-    const { bytecode, aci } = await compiler.compileBySourceCode(inclSourceCode, inclFileSystem);
+    const { bytecode, aci, warnings } = await compiler
+      .compileBySourceCode(inclSourceCode, inclFileSystem);
     expect(bytecode).to.equal(inclBytecode);
     expect(aci).to.eql(inclAci);
+    expect(warnings).to.eql([]);
   });
 
   it('throws clear exception if compile broken contract', async () => {
@@ -93,6 +96,30 @@ function testCompiler(compiler: CompilerBase): void {
         + 'type_error:3:32: Unbound variable `baz`\n'
         + 'type_error:4:33: Unbound variable `baz`',
     );
+  });
+
+  it('returns warnings', async () => {
+    const { warnings } = await compiler.compileBySourceCode(
+      'include "./lib/Library.aes"\n'
+      + '\n'
+      + 'main contract Foo =\n'
+      + '  entrypoint getArg(x: int) =\n'
+      + '    let t = 42\n'
+      + '    x\n',
+      {
+        './lib/Library.aes': ''
+        + 'contract Library =\n'
+        + '  entrypoint getArg() =\n'
+        + '    1 / 0\n',
+      },
+    );
+    expect(warnings).to.eql([{
+      message: 'The variable `t` is defined but never used.',
+      pos: { col: 9, line: 5 },
+    }, {
+      message: 'Division by zero.',
+      pos: { file: './lib/Library.aes', col: 5, line: 3 },
+    }]);
   });
 
   it('generates aci by path', async () => {
