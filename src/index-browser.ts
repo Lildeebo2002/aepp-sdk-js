@@ -48,7 +48,7 @@ export {
 export { default as Contract } from './contract/Contract';
 export type { ContractMethodsBase } from './contract/Contract';
 export {
-  pollForQueries, getQueryObject, extendOracleTtl,
+  pollForQueries, extendOracleTtl,
   respondToQuery, getOracleObject, registerOracle,
 } from './oracle';
 export { default as OracleClient } from './oracle/OracleClient';

@@ -7,6 +7,7 @@ import { decode, Encoded } from '../utils/encoder';
 import { _getPollInterval, getHeight, sendTransaction } from '../chain';
 import Node from '../Node';
 import AccountBase from '../account/Base';
+import OracleBase from './OracleBase';
 
 interface OracleClientPostQueryOptions extends
   Optional<Parameters<typeof sendTransaction>[1], 'onNode' | 'onAccount'>,
@@ -15,7 +16,7 @@ interface OracleClientPostQueryOptions extends
 /**
  * @category oracle
  */
-export default class OracleClient {
+export default class OracleClient extends OracleBase {
   /**
    * @param address - Oracle public key
    * @param options - Options object
@@ -23,9 +24,11 @@ export default class OracleClient {
    * @param options.onNode - Node to use
    */
   constructor(
-    public readonly address: Encoded.OracleAddress,
-    public options: { onAccount: AccountBase; onNode: Node } & Parameters<OracleClient['query']>[1],
-  ) {}
+    address: Encoded.OracleAddress,
+    public override options: { onAccount: AccountBase; onNode: Node } & Parameters<OracleClient['query']>[1],
+  ) {
+    super(address, options);
+  }
 
   /**
    * Post query to oracle
