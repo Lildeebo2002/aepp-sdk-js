@@ -109,6 +109,5 @@ export {
 } from './utils/errors';
 export {
   RpcBroadcastError, NAME_BID_MAX_LENGTH, encodeFateValue, decodeFateValue,
-  NAME_TTL, NAME_MAX_TTL, NAME_MAX_CLIENT_TTL, CLIENT_TTL,
   ORACLE_TTL, QUERY_TTL, RESPONSE_TTL,
 } from './deprecated';
