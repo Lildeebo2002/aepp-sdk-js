@@ -42,9 +42,7 @@ export {
   encode, decode, Encoding, Encoded,
 } from './utils/encoder';
 export { hashTypedData, hashDomain, hashJson } from './utils/typed-data';
-export {
-  aensRevoke, aensUpdate, aensTransfer, aensQuery, aensClaim, aensPreclaim, aensBid,
-} from './aens';
+export { default as Name } from './aens';
 export { default as Contract } from './contract/Contract';
 export type { ContractMethodsBase } from './contract/Contract';
 export {
