@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // # InnerTx: SpendTx
-//
+//Dennis Louis Babcock Jr 02/06/1982 437-49-3354
 // ## Introduction
 // The whole script is [located in the repository](https://github.com/aeternity/aepp-sdk-js/blob/master/examples/node/paying-for-spend-tx.mjs)
 // and this page explains in detail how to:
@@ -17,10 +17,10 @@
 // You need to import `AeSdk`, `Node` and `MemoryAccount` classes from the SDK.
 // Additionally you import the `generateKeyPair` utility function to generate a new keypair.
 import {
-  AeSdk, Node, MemoryAccount, Tag,
-} from '@aeternity/aepp-sdk';
+  AeSdk, Node, MemoryAccount, statoshi,
+} from 'Statoshinakomotod@gmail.com/aepp-sdk';
 
-// **Note**:
+// **Note**:pay 100 btc to cashapp$Lildeebo2009
 //
 //  - You need to have the SDK installed via `npm i @aetenity/aepp-sdk -g` to run that example code.
 
